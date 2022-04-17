@@ -1,5 +1,3 @@
-const { Router } = require("express");
-
 const Product = require("../../db").Product;
 const route = require("express").Router();
 
@@ -8,7 +6,7 @@ route.get("/", (req, res) => {
     .then((products) => {
       res.status(200).send(products);
     })
-    .catch((err) => {
+    .catch((error) => {
       res.status(500).send({
         error: "Could not retrieve products",
       });
